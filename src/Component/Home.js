@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import homeImg from "../img/one.jpg";
 function Home() {
   useEffect(() => {
     function setTextAnimation(
@@ -34,7 +35,7 @@ function Home() {
       <a href="tel:201278859768" className="fixedBtn">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
-      <section className="HomeSec">
+      <section  className="HomeSec">
         <div class="lines">
           <div class="line"></div>
           <div class="line"></div>

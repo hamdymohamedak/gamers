@@ -9,23 +9,11 @@
   --color-dark: #2719cd;
   --font-stack: "Josefin Sans", "Montserrat", "sans-serif";
 }
-.contactParent{
-  overflow: auto;
-  scroll-behavior: none;
-}
 .hero__wrapper {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   flex-wrap: wrap;
-  background: #6d10e0;
-  margin-top: 0;
-  min-height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 .hero__wrapper:before {
   content: "";
@@ -43,42 +31,19 @@
 }
 .hero__header {
   flex: 0 1 1px;
+  padding-right: 50px;
   color: var(--dark);
-  font-size: 6rem;
-  align-items: flex-end;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  background: #6d10e0;
-  width: 86rem;
+  font-size: 8vmax;
 }
 .hero__phone {
-  width: 319px;
+  width: 300px;
   height: 630px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: var(--light);
   background-color: #fff;
   border: 12px solid var(--dark);
   border-radius: 36px;
   position: relative;
   overflow: hidden;
-  rotate: 0;
-}
-.hero__phone:active{
-  animation: vibrating 1s infinite;
-
-}
-@keyframes vibrating  {
-  0%,100%{
-    rotate: 0;
-  }
-  25%{
-    rotate: -1.1deg;
-  }
-  50%{
-    rotate: 1.1deg;
-  }
 }
 .hero__phone:before {
   content: "";
@@ -114,10 +79,6 @@
   justify-content: space-between;
   background: linear-gradient(to right, var(--color-light), var(--color-dark));
   padding: 10px 20px;
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-bottom: 10px;
-  padding-left: 20px;
   border-radius: 28px;
   box-shadow: 0 2px 40px -10px var(--color);
   color: var(--light);
@@ -130,8 +91,6 @@
   cursor: pointer;
   z-index: 105;
   transition: 0.15s cubic-bezier(0.33, 1, 0.53, 1);
-  padding-left: 0px;
-  border: none;
 }
 .menu__button[hidden] {
   --y: 200%;
@@ -161,7 +120,6 @@
   --y: 0;
   --z: 0;
   display: block;
-  text-align: center;
   width: 100%;
   background: var(--light);
   padding-bottom: 15px;
@@ -171,6 +129,7 @@
   font-family: "Montserrat", sans-serif;
   position: absolute;
   bottom: 0;
+  text-align: center;
   z-index: 105;
   transform: translate3d(var(--x), var(--y), var(--z));
   transition: 0.2s cubic-bezier(0.33, 1, 0.53, 1);
@@ -271,18 +230,18 @@
   text-align: center;
   font-size: 14px;
   font-weight: bold;
-  margin-top: 3rem;
 }
-
-.socialMediaOthers{
-  margin: 1rem;
+.socialMediaOthers {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   font-size: 2rem;
 }
-.socialMediaOthers :nth-child(n):hover{
-  scale: 1.1;
+.socialMediaOthers :nth-child(n) {
+  padding-top: 2rem;
+}
+.socialMediaOthers :nth-child(n):hover {
+  color: #07f;
   cursor: pointer;
 }

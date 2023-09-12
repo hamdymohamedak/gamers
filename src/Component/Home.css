@@ -7,8 +7,61 @@
   align-items: center;
   flex-direction: column;
   gap: 5rem;
+  animation: ImgChanger 50s infinite;
 }
-
+@keyframes ImgChanger {
+  0%,
+  100% {
+    background: url(../img/one.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  20% {
+    background: url(../img/oher1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  30% {
+    background: url(../img/siven.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  40% {
+    background: url(../img/four.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  60% {
+    background: url(../img/five.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
 .lines {
   position: absolute;
   top: 0;

@@ -51,7 +51,6 @@ function Contact() {
     window.open("https://t.me/Askander");
   };
   return (
-    <section className="contactParent">
       <div className="hero__wrapper">
         <h1 className="hero__header"></h1>
         <div className="hero__phone">
@@ -138,7 +137,6 @@ function Contact() {
           <div className="menu__overlay" hidden="hidden" />
         </div>
       </div>
-    </section>
   );
 }
 

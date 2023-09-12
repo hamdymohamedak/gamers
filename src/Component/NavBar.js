@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { format } from "date-fns";
-import logoWithoutBg from "../img/LogoWithoutBg.svg";
+import logoWithoutBg from "../img/logos/LogoWithoutBg.svg";
 function NavBar() {
   const [formattedTime, setFormattedTime] = useState("");
 
   useEffect(() => {
     const timer = setInterval(() => {
       const currentTime = new Date();
-      const newFormattedTime = format(currentTime, "HH:mm:ss a");
+      const newFormattedTime = format(currentTime, "hh:mm:ss a");
       setFormattedTime(newFormattedTime);
     }, 1000);
 
@@ -17,9 +17,8 @@ function NavBar() {
       clearInterval(timer);
     };
   }, []);
-
   return (
-    <ul >
+    <ul>
       <div>
         <h1 className="clock">{formattedTime}</h1>
       </div>
