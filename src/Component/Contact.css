@@ -19,6 +19,13 @@
   justify-content: center;
   flex-wrap: wrap;
   background: #6d10e0;
+  margin-top: 0;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .hero__wrapper:before {
   content: "";
@@ -52,9 +59,6 @@
   align-items: center;
   background: var(--light);
   background-color: #fff;
-  background: #fff
-    url("https://codepenworldsfair.com/images/small-worlds-fair.png")
-    center/250px no-repeat;
   border: 12px solid var(--dark);
   border-radius: 36px;
   position: relative;
@@ -267,6 +271,7 @@
   text-align: center;
   font-size: 14px;
   font-weight: bold;
+  margin-top: 3rem;
 }
 
 .socialMediaOthers{

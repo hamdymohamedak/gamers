@@ -55,7 +55,7 @@ function Contact() {
       <div className="hero__wrapper">
         <h1 className="hero__header"></h1>
         <div className="hero__phone">
-          <button className="menu__button">
+          <button tton className="menu__button">
             <div>
               <div />
             </div>
@@ -66,7 +66,7 @@ function Contact() {
               <label>
                 <div />
               </label>
-              <p>Quick Navigation</p>
+              <p>social Media</p>
               <button title="Close">
                 <div />
               </button>
