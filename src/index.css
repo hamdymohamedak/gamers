@@ -26,3 +26,6 @@ a {
 section {
   min-height: 100vh;
 }
+::selection{
+  background: #6d10e0;
+}

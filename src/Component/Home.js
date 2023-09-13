@@ -99,7 +99,7 @@ function Home() {
             />
           </g>
         </svg>
-        <Link to={"/games"} className="homeBtn">
+        <Link to={"/storesgames"} className="homeBtn">
           Go To Games
         </Link>
       </section>
