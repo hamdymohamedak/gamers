@@ -233,3 +233,50 @@
     rotate: 3000deg;
   }
 }
+
+.popParent {
+  display: flex;
+  gap: 2rem;
+}
+.pop {
+  height: 3rem;
+  background: #6d10e0;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-transform: capitalize;
+  text-decoration: none;
+  z-index: 999;
+  color: white;
+  box-shadow: 2px 2px 19px 3px #6d10e0;
+  font-size: 1.3rem;
+}
+
+.pop:hover {
+  scale: 1.1;
+  height: 3rem;
+  width: 10rem;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+}
+.android {
+  color: #37d041;
+}
+.xbox {
+  color: #37d041;
+}
+/*  */
+#android:hover {
+  background: #0f2c59;
+  box-shadow: 2px 2px 19px 3px #0f2c59;
+}
+#iphone:hover {
+  background: #0f2c59;
+  box-shadow: 2px 2px 19px 3px #0f2c59;
+  color: #1d7dee;
+}
+#ps:hover {
+  background: #08499f;
+}

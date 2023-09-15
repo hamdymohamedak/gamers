@@ -12,15 +12,11 @@ function StoresGames() {
           <div className="card-hover__content">
             <h3 className="card-hover__title">{gameProduct.name}</h3>
             <h2 className="card-hover__text">
-              Size:{" "}
+              Size:
               <span style={{ color: "black", fontWeight: "bold" }}>
                 {gameProduct.size}
               </span>
             </h2>
-            <h4>
-              If the installation needs a password:{" "}
-              <span style={{ color: "black" }}>{gameProduct.password}</span>
-            </h4>
             <p>OS: {gameProduct.OS}</p>
             <p>
               Processor:

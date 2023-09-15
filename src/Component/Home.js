@@ -35,7 +35,7 @@ function Home() {
       <a href="tel:201278859768" className="fixedBtn">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
-      <section  className="HomeSec">
+      <section className="HomeSec">
         <div class="lines">
           <div class="line"></div>
           <div class="line"></div>
@@ -100,8 +100,23 @@ function Home() {
           </g>
         </svg>
         <Link to={"/storesgames"} className="homeBtn">
+          {" "}
           Go To Games
         </Link>
+        <div className="popParent">
+          <Link to={"/android"} id="android" className="pop android ">
+            <i class="fa-brands fa-android"></i>
+          </Link>
+          <Link to={"/playstation"} id="ps" className="pop ps ">
+            <i class="fa-brands fa-playstation"></i>
+          </Link>
+          <Link to={"/xbox"} id="xbox" className="pop xbox ">
+            <i class="fa-brands fa-xbox"></i>
+          </Link>
+          <Link to={"/iphone"} id="iphone" className="pop iphone ">
+            <i class="fa-brands fa-app-store-ios"></i>
+          </Link>
+        </div>
       </section>
     </>
   );

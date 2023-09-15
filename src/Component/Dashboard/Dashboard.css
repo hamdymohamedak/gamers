@@ -1,0 +1,72 @@
+.dashSec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+.dashForm {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+  place-items: center;
+}
+.dashboard-container {
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+  height: 35rem;
+}
+h1 {
+  color: #007bff;
+  font-size: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+.input-group :nth-child(2) {
+  border-radius: 2rem;
+  padding-left: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.2rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.submit-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.others {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  left: 10%;
+}
