@@ -32,7 +32,11 @@ function Home() {
   });
   return (
     <>
-      <a href="tel:201278859768" className="fixedBtn">
+      <a
+        style={{ zIndex: "1000" }}
+        href="tel:201278859768"
+        className="fixedBtn"
+      >
         <i class="fa-brands fa-whatsapp"></i>
       </a>
       <section className="HomeSec">
