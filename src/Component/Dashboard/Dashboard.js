@@ -1,8 +1,28 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
+import { sql } from "@vercel/postgres";
 
 function Dashboard() {
+  try {
+    sql`
+      CREATE TABLE IF NOT EXISTS games (
+        id SERIAL PRIMARY KEY,
+        name TEXT,
+        size TEXT,
+        downloadlink TEXT,
+        imgurl TEXT,
+        os TEXT,
+        processor TEXT,
+        memory TEXT,
+        graphics TEXT,
+        directx TEXT,
+        harddrive TEXT
+      );
+    `;
+  } catch (error) {
+    console.error("Error inserting data into PostgreSQL:", error);
+  }
   // Step 2: Create state variables for form data
   const [formData, setFormData] = useState({
     name: "",
@@ -16,7 +36,7 @@ function Dashboard() {
     DirectX: "",
     "Hard Drive": "",
   });
-
+  const [rows, setRows] = useState([]);
   // Step 3: Handle input field changes and update the state
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,9 +47,28 @@ function Dashboard() {
   };
 
   // Step 4: Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData); // You can perform further actions here, like sending the data to a server
+    let HardDrive = formData["Hard Drive"];
+    try {
+      const {
+        name,
+        size,
+        downloadLink,
+        imgURL,
+        OS,
+        Processor,
+        Memory,
+        Graphics,
+        DirectX,
+      } = formData;
+      const result =
+        await sql`INSERT INTO games (name, size, downloadlink, imgurl, os, processor, memory, graphics, directx, harddrive) VALUES (${name}, ${size}, ${downloadLink}, ${imgURL}, ${OS}, ${Processor}, ${Memory}, ${Graphics}, ${DirectX}, ${HardDrive}) RETURNING *`;
+      console.log("Inserted row:", result);
+      // Optionally, you can clear the form or perform other actions here
+    } catch (error) {
+      console.error("Error inserting data into PostgreSQL:", error);
+    }
   };
 
   return (
