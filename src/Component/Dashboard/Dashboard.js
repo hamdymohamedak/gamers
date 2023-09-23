@@ -1,61 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
 
-function Dashboard() {
-  // Step 2: Create state variables for form data
-  const [formData, setFormData] = useState({
-    name: "",
-    size: "",
-    downloadLink: "",
-    imgURL: "",
-    OS: "",
-    Processor: "",
-    Memory: "",
-    Graphics: "",
-    DirectX: "",
-    "Hard Drive": "",
-  });
-
-  // Step 3: Handle input field changes and update the state
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+function mainDash() {
+  let handleValue = (event) => {
+    let eventValue = event.target.value;
+    if (eventValue === "Xbox") {
+      alert("XBOX");
+    }
   };
-
-  // Step 4: Handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData); // You can perform further actions here, like sending the data to a server
-  };
-
   return (
     <section className="dashSec">
       <div className="dashboard-container">
-        <h1>StoresGames</h1>
-        <form className="dashForm" onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="input-group">
-            <label htmlFor="size">Size</label>
-            <input
-              type="text"
-              id="size"
-              name="size"
-              value={formData.size}
-              onChange={handleInputChange}
-            />
+        <h1 className="title">Dashboard</h1>
+        <form className="dashForm">
+          <div className="input-grid">
+            <div className="input-group">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="input-field"
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="size">Size</label>
+              <input
+                type="text"
+                id="size"
+                name="size"
+                className="input-field"
+              />
+            </div>
           </div>
           <div className="input-group">
             <label htmlFor="downloadLink">Download Link</label>
@@ -63,8 +40,7 @@ function Dashboard() {
               type="text"
               id="downloadLink"
               name="downloadLink"
-              value={formData.downloadLink}
-              onChange={handleInputChange}
+              className="input-field"
             />
           </div>
           <div className="input-group">
@@ -73,75 +49,90 @@ function Dashboard() {
               type="text"
               id="imgURL"
               name="imgURL"
-              value={formData.imgURL}
-              onChange={handleInputChange}
+              className="input-field"
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="uploadImage">Upload Image</label>
+            <input
+              type="file"
+              id="uploadImage"
+              name="uploadImage"
+              className="file-input"
             />
           </div>
 
-          <div className="input-group">
-            <label htmlFor="imgURL">OS</label>
-            <input
-              type="text"
-              id="OS"
-              name="OS"
-              value={formData.OS}
-              onChange={handleInputChange}
-            />
+          <div className="input-grid">
+            <div className="input-group">
+              <label htmlFor="OS">Operating System</label>
+              <input type="text" id="OS" name="OS" className="input-field" />
+            </div>
+            <div className="input-group">
+              <label htmlFor="Processor">Processor</label>
+              <input
+                type="text"
+                id="Processor"
+                name="Processor"
+                className="input-field"
+              />
+            </div>
+          </div>
+
+          <div className="input-grid">
+            <div className="input-group">
+              <label htmlFor="Memory">Memory</label>
+              <input
+                type="text"
+                id="Memory"
+                name="Memory"
+                className="input-field"
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="Graphics">Graphics</label>
+              <input
+                type="text"
+                id="Graphics"
+                name="Graphics"
+                className="input-field"
+              />
+            </div>
+          </div>
+
+          <div className="input-grid">
+            <div className="input-group">
+              <label htmlFor="DirectX">DirectX</label>
+              <input
+                type="text"
+                id="DirectX"
+                name="DirectX"
+                className="input-field"
+              />
+            </div>
+            <div className="input-group">
+              <label htmlFor="HardDrive">Hard Drive</label>
+              <input
+                type="text"
+                id="HardDrive"
+                name="HardDrive"
+                className="input-field"
+              />
+            </div>
           </div>
 
           <div className="input-group">
-            <label htmlFor="imgURL">Processor</label>
-            <input
-              type="text"
-              id="Processor"
-              name="Processor"
-              value={formData.Processor}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="input-group">
-            <label htmlFor="imgURL">Memory</label>
-            <input
-              type="text"
-              id="Memory"
-              name="Memory"
-              value={formData.Memory}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="input-group">
-            <label htmlFor="imgURL">Graphics</label>
-            <input
-              type="text"
-              id="Graphics"
-              name="Graphics"
-              value={formData.Graphics}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="input-group">
-            <label htmlFor="imgURL">DirectX</label>
-            <input
-              type="text"
-              id="DirectX"
-              name="DirectX"
-              value={formData.DirectX}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="input-group">
-            <label htmlFor="imgURL">Hard Drive</label>
-            <input
-              type="text"
-              id="Hard Drive"
-              name="Hard Drive"
-              value={formData["Hard Drive"]}
-              onChange={handleInputChange}
-            />
+            <label htmlFor="platform">Platform</label>
+            <select
+              onChange={handleValue}
+              name="platform"
+              id="platform"
+              className="select-field"
+            >
+              <option value="Android">Android</option>
+              <option value="PlayStation">PlayStation</option>
+              <option value="Xbox">Xbox</option>
+              <option value="iPhone">iPhone</option>
+            </select>
           </div>
 
           <button type="submit" className="submit-btn">
@@ -149,13 +140,8 @@ function Dashboard() {
           </button>
         </form>
       </div>
-      <div className="others">
-        <Link to={"/AndroidDash"}>Android</Link>
-        <Link to={"/PlayStationDash"}>PlayStation</Link>
-        <Link to={"/Xbox"}>XBox</Link>
-      </div>
     </section>
   );
 }
 
-export default Dashboard;
+export default mainDash;

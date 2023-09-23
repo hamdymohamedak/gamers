@@ -2,22 +2,37 @@
   background: url(../img/one.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 5rem;
+  -webkit-animation: ImgChanger 50s infinite;
   animation: ImgChanger 50s infinite;
 }
-@keyframes ImgChanger {
+@-webkit-keyframes ImgChanger {
   0%,
   100% {
     background: url(../img/one.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
     gap: 5rem;
   }
@@ -25,9 +40,14 @@
     background: url(../img/oher1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
     gap: 5rem;
   }
@@ -35,9 +55,14 @@
     background: url(../img/siven.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
     gap: 5rem;
   }
@@ -45,9 +70,14 @@
     background: url(../img/four.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
     flex-direction: column;
     gap: 5rem;
   }
@@ -55,9 +85,112 @@
     background: url(../img/five.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    display: -webkit-box;
     display: flex;
+    -webkit-box-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
+@keyframes ImgChanger {
+  0%,
+  100% {
+    background: url(../img/one.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  20% {
+    background: url(../img/oher1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  30% {
+    background: url(../img/siven.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  40% {
+    background: url(../img/four.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  60% {
+    background: url(../img/five.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 5rem;
   }
@@ -90,14 +223,31 @@
   width: 100%;
   top: -50%;
   left: 0;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(255, 255, 255, 0)),
+    color-stop(75%, #ffffff),
+    to(#ffffff)
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0) 0%,
     #ffffff 75%,
     #ffffff 100%
   );
+  -webkit-animation: drop 7s 0s infinite;
   animation: drop 7s 0s infinite;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
   animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
 }
 
@@ -106,6 +256,7 @@
 }
 
 .line:nth-child(1)::after {
+  -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }
 
@@ -114,7 +265,17 @@
 }
 
 .line:nth-child(3)::after {
+  -webkit-animation-delay: 2.5s;
   animation-delay: 2.5s;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
 }
 
 @keyframes drop {
@@ -154,24 +315,28 @@
     fill: #6d10e0;
   }
 }
-
 .homeBtn {
   height: 3rem;
   background: #6d10e0;
   width: 12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-radius: 11px;
   text-transform: capitalize;
   text-decoration: none;
   z-index: 999;
   color: white;
-  box-shadow: 2px 2px 19px 3px #6d10e0;
 }
 .homeBtn:hover {
-  scale: 1.1;
-  box-shadow: 2px 2px 29px 9px #6d10e0;
+  scale: 1.2;
+  border-radius: 10%;
 }
 
 @media (max-width: 425px) {
@@ -204,16 +369,33 @@
   cursor: pointer;
   z-index: 999;
   background: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-radius: 11px;
+  -webkit-animation: fixedBtn 2s infinite;
   animation: fixedBtn 2s infinite;
 }
 .fixedBtn:hover {
   scale: 0.9;
   border-radius: 50%;
+  -webkit-animation: fixedBtnRotate 50s infinite;
   animation: fixedBtnRotate 50s infinite;
+}
+@-webkit-keyframes fixedBtn {
+  0%,
+  100% {
+    translate: 0% 0%;
+  }
+  50% {
+    translate: 0% 10%;
+  }
 }
 @keyframes fixedBtn {
   0%,
@@ -222,6 +404,15 @@
   }
   50% {
     translate: 0% 10%;
+  }
+}
+@-webkit-keyframes fixedBtnRotate {
+  0%,
+  100% {
+    rotate: 0;
+  }
+  50% {
+    rotate: 3000deg;
   }
 }
 @keyframes fixedBtnRotate {
@@ -235,6 +426,8 @@
 }
 
 .popParent {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2rem;
 }
@@ -242,14 +435,21 @@
   height: 3rem;
   background: #6d10e0;
   width: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-radius: 50%;
   text-transform: capitalize;
   text-decoration: none;
   z-index: 999;
   color: white;
+  -webkit-box-shadow: 2px 2px 19px 3px #6d10e0;
   box-shadow: 2px 2px 19px 3px #6d10e0;
   font-size: 1.3rem;
 }
@@ -270,10 +470,12 @@
 /*  */
 #android:hover {
   background: #0f2c59;
+  -webkit-box-shadow: 2px 2px 19px 3px #0f2c59;
   box-shadow: 2px 2px 19px 3px #0f2c59;
 }
 #iphone:hover {
   background: #0f2c59;
+  -webkit-box-shadow: 2px 2px 19px 3px #0f2c59;
   box-shadow: 2px 2px 19px 3px #0f2c59;
   color: #1d7dee;
 }

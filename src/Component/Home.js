@@ -103,10 +103,35 @@ function Home() {
             />
           </g>
         </svg>
-        <Link to={"/storesgames"} className="homeBtn">
-          {" "}
-          Go To Games
-        </Link>
+
+        {/*  */}
+        <div 
+          id="carouselExampleInterval"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active" data-bs-interval={10000}>
+              <Link to={"/storesgames"} className="homeBtn">
+                {" "}
+                Let's play
+              </Link>{" "}
+            </div>
+            <div className="carousel-item" data-bs-interval={2000}>
+              <Link to={"/storesgames"} className="homeBtn">
+                {" "}
+                Games
+              </Link>{" "}
+            </div>
+            <div className="carousel-item">
+              <Link to={"/storesgames"} className="homeBtn">
+                {" "}
+                Go To Games
+              </Link>{" "}
+            </div>
+          </div>
+        </div>
+        {/*  */}
         <div className="popParent">
           <Link to={"/android"} id="android" className="pop android ">
             <i class="fa-brands fa-android"></i>

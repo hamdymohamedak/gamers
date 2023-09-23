@@ -9,9 +9,6 @@ import Android from "./Component/Android";
 import Playstation from "./Component/Playstation";
 import Xbox from "./Component/Xbox";
 import Iphone from "./Component/Iphone";
-import AndroidDash from "./Component/Dashboard/AndroidDash";
-import PlayStationDash from "./Component/Dashboard/PlayStationDash";
-import XboxDash from "./Component/Dashboard/XboxDash";
 import NavBar from "./Component/NavBar";
 
 function App() {
@@ -27,10 +24,7 @@ function App() {
         <Route path="/android" element={<Android />} />
         <Route path="/playstation" element={<Playstation />} />
         <Route path="/xbox" element={<Xbox />} />
-        <Route path="/iphone" element={<Iphone />} />
-        <Route path="/androiddash" element={<AndroidDash />} />
-        <Route path="/playstationdash" element={<PlayStationDash />} />
-        <Route path="/xboxdash" element={<XboxDash />} />
+        <Route path="/iphone" element={<Iphone />} />/>
       </Routes>
     </>
   );

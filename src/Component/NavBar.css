@@ -1,52 +1,125 @@
-ul {
+/* NavBar.css */
+.navbar {
   background: transparent;
-  height: 6rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 2.5rem;
-  list-style: none;
-  text-transform: capitalize;
+  padding: 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
-}
-ul :nth-child(n) {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-ul :nth-child(n):hover {
-  color: #6d10e0;
-  cursor: pointer;
-}
-.nav {
-  display: flex;
-  gap: 2rem;
-}
-.logo {
-  height: 6rem;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
 }
 
-@media (max-width: 425px) {
+.navbar.clicked {
+  background-color: transparent;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.responsive {
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin-top: 10px;
+}
+
+.clock {
+  color: white;
+  font-size: 2rem;
+}
+
+.nav-links.show {
+  display: block;
+  text-align: center;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  font-size: 1.2rem;
+}
+
+.nav-links ul li {
+  margin: 10px 0;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+}
+.nav-links ul li a:hover {
+  color: #6d10e0;
+
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #6d10e0;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.burger.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 556px) {
   html {
-    font-size: 11px;
+    font-size: 10px;
   }
-  .logo {
+  .burger {
+    display: flex;
+  }
+  svg {
+    height: 5rem;
+  }
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links {
     display: none;
   }
-  .clock {
-    font-size: 1.2rem;
-  }
 }
-@media (min-width: 426px) and (max-width: 768px) {
+@media (min-width: 557px) and (max-width: 768px) {
   html {
     font-size: 12px;
   }
-}
-@media (min-with: 1600px) {
-  html {
-    font-size: 18px;
+  .burger {
+    display: flex;
+  }
+  svg {
+    height: 13rem;
+  }
+  .nav-links ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    display: none;
   }
 }

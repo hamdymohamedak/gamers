@@ -1,72 +1,111 @@
+/* Dashboard CSS */
+
 .dashSec {
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #141e46,
+    #141e46,
+    #141e46,
+    #141e46,
+    #141e46,
+    #141e46,
+    #141e46,
+    #141e46,
+    #5c1f5f,
+    #82145e,
+    #372156,
+    #141e46
+  );
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
 }
-.dashForm {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 1rem;
-  place-items: center;
-}
+
 .dashboard-container {
-  max-width: 32rem;
-  margin: 0 auto;
+  max-width: 30rem;
+  margin-top: 2rem;
   padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2719cd;
+}
+
+.dashForm {
+  margin-top: 20px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2719cd;
+}
+
+/* Make input fields 100% width on smaller screens */
+.input-field,
+.file-input,
+.select-field {
+  width: 100%;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
-  text-align: center;
-  height: 35rem;
-}
-h1 {
-  color: #007bff;
-  font-size: 1.1rem;
-  margin-bottom: 1.1rem;
-}
-
-.input-group {
-  margin-bottom: 1rem;
-}
-.input-group :nth-child(2) {
-  border-radius: 2rem;
-  padding-left: 1rem;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: 0.2rem;
-  border: 1px solid #ccc;
-  border-radius: 3px;
   font-size: 1rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Add margin-bottom for better spacing */
+.input-field,
+.file-input,
+.select-field {
+  margin-bottom: 10px;
 }
 
 .submit-btn {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 1.5rem;
-}
-
-.submit-btn:hover {
-  background-color: #0056b3;
-}
-
-.others {
+  width: 100%;
+  padding: 10px;
+  background-color: #2719cd;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  position: absolute;
-  left: 10%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.others {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.platform-link {
+  text-decoration: none;
+  color: #2719cd;
+  font-size: 1rem;
+  margin-right: 20px;
+}
+
+.platform-link:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .input-grid {
+    grid-template-columns: 1fr;
+  }
 }

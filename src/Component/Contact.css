@@ -10,15 +10,23 @@
   --font-stack: "Josefin Sans", "Montserrat", "sans-serif";
 }
 .hero__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .hero__wrapper:before {
   content: "";
   width: 150px;
   height: 150px;
+  background: -o-linear-gradient(315deg, var(--color-light), var(--color-dark));
   background: linear-gradient(135deg, var(--color-light), var(--color-dark));
   border-radius: 50%;
   position: fixed;
@@ -30,6 +38,8 @@
   margin: 15px;
 }
 .hero__header {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 1px;
   flex: 0 1 1px;
   padding-right: 50px;
   color: var(--dark);
@@ -44,6 +54,7 @@
   border-radius: 36px;
   position: relative;
   overflow: hidden;
+  z-index: 999;
 }
 .hero__phone:before {
   content: "";
@@ -55,6 +66,8 @@
   position: absolute;
   top: 0;
   left: 50%;
+  -webkit-transform: translatex(-50%);
+  -ms-transform: translatex(-50%);
   transform: translatex(-50%);
   z-index: 1000;
 }
@@ -67,6 +80,8 @@
   position: absolute;
   bottom: 6px;
   left: 50%;
+  -webkit-transform: translatex(-50%);
+  -ms-transform: translatex(-50%);
   transform: translatex(-50%);
   z-index: 1000;
 }
@@ -74,12 +89,36 @@
   --x: -50%;
   --y: 0;
   --z: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  border: none;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  width: 2.5rem;
+  height: 2.5rem;
   justify-content: space-between;
-  background: linear-gradient(to right, var(--color-light), var(--color-dark));
+  background-image: linear-gradient(
+    to right top,
+    #2719cd,
+    #2719cd,
+    #2719cd,
+    #2719cd,
+    #2719cd,
+    #941ed2,
+    #941ed2,
+    #941ed2,
+    #941ed2,
+    #941ed2,
+    #941ed2,
+    #941ed2
+  );
   padding: 10px 20px;
   border-radius: 28px;
+  -webkit-box-shadow: 0 2px 40px -10px var(--color);
   box-shadow: 0 2px 40px -10px var(--color);
   color: var(--light);
   font-size: 16px;
@@ -87,16 +126,30 @@
   position: absolute;
   bottom: 30px;
   left: 50%;
+  -webkit-transform: translate3d(var(--x), var(--y), var(--z));
   transform: translate3d(var(--x), var(--y), var(--z));
   cursor: pointer;
   z-index: 105;
+  -webkit-transition: 0.15s cubic-bezier(0.33, 1, 0.53, 1);
+  -o-transition: 0.15s cubic-bezier(0.33, 1, 0.53, 1);
   transition: 0.15s cubic-bezier(0.33, 1, 0.53, 1);
+  animation: btnRotating 2s infinite;
+  text-align: center;
+}
+.menu__button:hover {
+  height: 3rem;
+  width: 10rem;
 }
 .menu__button[hidden] {
   --y: 200%;
 }
+
 .menu__button div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 12px;
   height: 12px;
@@ -106,6 +159,7 @@
   display: table;
   height: 1px;
   background: var(--light);
+  -webkit-box-shadow: 0 4px 0 var(--light), 0 -4px 0 var(--light);
   box-shadow: 0 4px 0 var(--light), 0 -4px 0 var(--light);
 }
 .menu__overlay {
@@ -125,13 +179,17 @@
   padding-bottom: 15px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  -webkit-box-shadow: 0px -9px 50px -30px black;
   box-shadow: 0px -9px 50px -30px black;
   font-family: "Montserrat", sans-serif;
   position: absolute;
   bottom: 0;
   text-align: center;
   z-index: 105;
+  -webkit-transform: translate3d(var(--x), var(--y), var(--z));
   transform: translate3d(var(--x), var(--y), var(--z));
+  -webkit-transition: 0.2s cubic-bezier(0.33, 1, 0.53, 1);
+  -o-transition: 0.2s cubic-bezier(0.33, 1, 0.53, 1);
   transition: 0.2s cubic-bezier(0.33, 1, 0.53, 1);
 }
 .menu__body[hidden] {
@@ -141,7 +199,11 @@
   border-bottom: 2px solid var(--neutral);
 }
 .menu__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 15px 20px;
 }
@@ -151,6 +213,8 @@
   border: 2px solid var(--dark);
   border-radius: 50%;
   position: relative;
+  -webkit-transform: rotate(5.5rad);
+  -ms-transform: rotate(5.5rad);
   transform: rotate(5.5rad);
 }
 .menu__header label div:after {
@@ -161,6 +225,8 @@
   position: absolute;
   top: 100%;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 .menu__header p {
@@ -173,8 +239,14 @@
   font-weight: normal;
 }
 .menu__header button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 25px;
   height: 25px;
@@ -187,6 +259,8 @@
   height: 3px;
   background: var(--light);
   position: relative;
+  -webkit-transform: rotate(5.5rad);
+  -ms-transform: rotate(5.5rad);
   transform: rotate(5.5rad);
 }
 .menu__header button div:before {
@@ -197,15 +271,21 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 .menu__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 10px 15px;
   font-weight: bold;
   overflow-x: auto;
 }
 .menu__links a {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 1px;
   flex: 1 1 1px;
   padding: 10px 8px;
   color: var(--dark);
@@ -213,6 +293,8 @@
   white-space: nowrap;
 }
 .menu__contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 8px;
 }
@@ -221,6 +303,8 @@
   fill: var(--color);
 }
 .menu__contact a {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 30%;
   flex: 1 1 30%;
   padding: 5px;
   margin: 5px;
@@ -232,8 +316,14 @@
   font-weight: bold;
 }
 .socialMediaOthers {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 2rem;
   font-size: 2rem;
