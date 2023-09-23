@@ -24,7 +24,7 @@ function App() {
         <Route path="/android" element={<Android />} />
         <Route path="/playstation" element={<Playstation />} />
         <Route path="/xbox" element={<Xbox />} />
-        <Route path="/iphone" element={<Iphone />} />/>
+        <Route path="/iphone" element={<Iphone />} />
       </Routes>
     </>
   );
