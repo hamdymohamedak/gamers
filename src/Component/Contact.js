@@ -6,6 +6,9 @@ function Contact() {
     const menu = document.querySelector(".menu__body");
     const close = document.querySelector(".menu__header button");
     const overlay = document.querySelector(".menu__overlay");
+    if (!button || !menu || !close || !overlay) {
+      return;
+    }
 
     function showMenu() {
       button.setAttribute("hidden", "");
@@ -22,7 +25,12 @@ function Contact() {
     button.addEventListener("click", showMenu);
     close.addEventListener("click", hideMenu);
     overlay.addEventListener("click", hideMenu);
-  });
+    return () => {
+      button.removeEventListener("click", showMenu);
+      close.removeEventListener("click", hideMenu);
+      overlay.removeEventListener("click", hideMenu);
+    };
+  }, []);
   //   useState events
 
   let [mobileContent, setMobileContent] = useState("Askander");
@@ -52,9 +60,9 @@ function Contact() {
   };
   return (
       <div className="hero__wrapper">
-        <h1 className="hero__header"></h1>
+        <h1 className="hero__header">Contact</h1>
         <div className="hero__phone">
-          <button tton className="menu__button">
+          <button className="menu__button">
             <div>
               <div />
             </div>
@@ -129,9 +137,9 @@ function Contact() {
             </div>
             {mobileContent} {/*Defult = Askander*/}
             <div style={iconsViewFromHidden} className="socialMediaOthers">
-              <i onClick={handleFacebook} class="fa-brands fa-facebook"></i>
-              <i onClick={handleGitHub} class="fa-brands fa-github"></i>
-              <i onClick={handleTelegram} class="fa-brands fa-telegram"></i>
+              <i onClick={handleFacebook} className="fa-brands fa-facebook"></i>
+              <i onClick={handleGitHub} className="fa-brands fa-github"></i>
+              <i onClick={handleTelegram} className="fa-brands fa-telegram"></i>
             </div>
           </section>
           <div className="menu__overlay" hidden="hidden" />

@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
-import Footer from "./Footer";
-import homeImg from "../img/one.jpg";
-import AskanderName from "./AskanderTitle"
+import AskanderName from "./AskanderTitle";
 
 function Home() {
   useEffect(() => {
@@ -19,6 +17,9 @@ function Home() {
       const mode = repeat ? "infinite" : "forwards";
 
       paths.forEach((path, i) => {
+        if (typeof path.getTotalLength !== "function") {
+          return;
+        }
         const length = path.getTotalLength();
         Object.assign(path.style, {
           "stroke-dashoffset": `${length}px`,
@@ -36,7 +37,12 @@ function Home() {
 
   return (
     <>
-      <a style={{ zIndex: "1000" }} href="tel:201278859768" className="fixedBtn">
+      <a
+        style={{ zIndex: "1000" }}
+        href="tel:201278859768"
+        className="fixedBtn"
+        aria-label="Call us on WhatsApp"
+      >
         <i className="fa-brands fa-whatsapp"></i>
       </a>
       <section className="HomeSec">
@@ -68,19 +74,6 @@ function Home() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="popParent">
-          {[
-            { id: "android", icon: "fa-android" },
-            { id: "ps", icon: "fa-playstation" },
-            { id: "xbox", icon: "fa-xbox" },
-            { id: "iphone", icon: "fa-app-store-ios" },
-          ].map((item) => (
-            <Link key={item.id} to={`/${item.id}`} className={`pop ${item.id}`}>
-              <i className={`fa-brands ${item.icon}`}></i>
-            </Link>
-          ))}
         </div>
       </section>
     </>

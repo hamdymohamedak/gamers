@@ -1,7 +1,12 @@
 {
   "name": "gamers",
   "version": "0.1.0",
+  "description": "A modern React web app for browsing games by platform and store.",
   "private": true,
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -23,12 +28,21 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --max-warnings=0",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,css,json}\" \"*.{json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,css,json}\" \"*.{json,md}\"",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.6.2"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "prettier"
     ]
   },
   "browserslist": {
