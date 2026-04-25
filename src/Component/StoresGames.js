@@ -6,15 +6,25 @@ import Footer from "./Footer";
 
 function StoresGames() {
   const RenderGameCard = React.memo(function RenderGameCard(gameProduct) {
+    const [imageFailed, setImageFailed] = React.useState(false);
+    const showImage = Boolean(gameProduct.imgURL) && !imageFailed;
+
     return (
       <>
-        <div className="card-hover">
-          <div className="card-media">
-            <LazyLoad height={220} offset={100}>
-              <img loading="lazy" src={gameProduct.imgURL} alt={gameProduct.id} />
-            </LazyLoad>
-          </div>
-          <div className="card-hover__content">
+        <div className={`card-hover ${showImage ? "" : "card-hover--no-image"}`}>
+          {showImage ? (
+            <div className="card-media">
+              <LazyLoad height={220} offset={100}>
+                <img
+                  loading="lazy"
+                  src={gameProduct.imgURL}
+                  alt={gameProduct.id}
+                  onError={() => setImageFailed(true)}
+                />
+              </LazyLoad>
+            </div>
+          ) : null}
+          <div className={`card-hover__content ${showImage ? "" : "card-hover__content--no-image"}`}>
             <h3 className="card-hover__title">{gameProduct.name}</h3>
             <p className="card-meta">
               <span>Size</span>

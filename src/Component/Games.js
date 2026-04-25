@@ -13,14 +13,19 @@ function GameCard({
   game_url,
   thumbnail,
 }) {
+  const [imageFailed, setImageFailed] = React.useState(false);
+  const showImage = Boolean(thumbnail) && !imageFailed;
+
   return (
-    <div className="card-hover">
-      <div className="card-media">
-        <LazyLoad height={220} offset={100}>
-          <img loading="lazy" src={thumbnail} alt={title} />
-        </LazyLoad>
-      </div>
-      <div className="card-hover__content">
+    <div className={`card-hover ${showImage ? "" : "card-hover--no-image"}`}>
+      {showImage ? (
+        <div className="card-media">
+          <LazyLoad height={220} offset={100}>
+            <img loading="lazy" src={thumbnail} alt={title} onError={() => setImageFailed(true)} />
+          </LazyLoad>
+        </div>
+      ) : null}
+      <div className={`card-hover__content ${showImage ? "" : "card-hover__content--no-image"}`}>
         <h3 className="card-hover__title">{title}</h3>
         <p className="card-hover__text">{short_description}</p>
         <p className="card-meta">
