@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import { format } from "date-fns";
 import logoWithoutBg from "../img/logos/LogoWithoutBg.svg";
 
 function NavBar() {
-  const [formattedTime, setFormattedTime] = useState("");
+  const [formattedTime, setFormattedTime] = useState(() =>
+    format(new Date(), "hh:mm:ss a")
+  );
   const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ function NavBar() {
   }, []);
 
   const toggleNav = () => {
-    setShowNav(!showNav);
+    setShowNav((prev) => !prev);
   };
 
   return (
@@ -35,21 +37,33 @@ function NavBar() {
       <div className={showNav ? "nav-links show" : "nav-links"}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/" onClick={() => setShowNav(false)}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/games">Games</Link>
+            <NavLink to="/games" onClick={() => setShowNav(false)}>
+              Games
+            </NavLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLink to="/contact" onClick={() => setShowNav(false)}>
+              Contact
+            </NavLink>
           </li>
         </ul>
       </div>
-      <div className="burger" onClick={toggleNav}>
+      <button
+        className={`burger ${showNav ? "open" : ""}`}
+        onClick={toggleNav}
+        aria-label={showNav ? "Close menu" : "Open menu"}
+        aria-expanded={showNav}
+        type="button"
+      >
         <div className={showNav ? "bar open" : "bar"}></div>
         <div className={showNav ? "bar open" : "bar"}></div>
         <div className={showNav ? "bar open" : "bar"}></div>
-      </div>
+      </button>
     </nav>
   );
 }

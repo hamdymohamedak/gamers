@@ -1,14 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
-import { Link } from "react-router-dom";
 
 function mainDash() {
-  let handleValue = (event) => {
-    let eventValue = event.target.value;
-    if (eventValue === "Xbox") {
-      alert("XBOX");
-    }
-  };
   return (
     <section className="dashSec">
       <div className="dashboard-container">
@@ -122,16 +115,8 @@ function mainDash() {
 
           <div className="input-group">
             <label htmlFor="platform">Platform</label>
-            <select
-              onChange={handleValue}
-              name="platform"
-              id="platform"
-              className="select-field"
-            >
-              <option value="Android">Android</option>
-              <option value="PlayStation">PlayStation</option>
-              <option value="Xbox">Xbox</option>
-              <option value="iPhone">iPhone</option>
+            <select name="platform" id="platform" className="select-field">
+              <option value="PC">PC</option>
             </select>
           </div>
 

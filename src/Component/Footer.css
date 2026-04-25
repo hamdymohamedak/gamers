@@ -1,38 +1,30 @@
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background: #6d10e0;
-  height: 3rem;
-  margin: 0;
-  border-radius: 10px;
+  background: var(--surface);
+  min-height: 3.2rem;
+  width: min(100%, 1140px);
+  margin: 1.4rem auto 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 999;
-  margin-top: 2rem;
 }
 .icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+  gap: 0.9rem;
   text-transform: capitalize;
+  color: var(--text-soft);
+  font-weight: 600;
 }
 .icons i {
-  margin: 1rem;
-  font-size: 1.8rem;
+  margin: 0;
+  font-size: 1.1rem;
   z-index: 999;
   cursor: pointer;
 }
 .icons i:hover {
-  color: #076df1;
+  color: var(--primary-2);
 }

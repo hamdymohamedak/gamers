@@ -5,7 +5,6 @@ import gamesData from "../games.json";
 import Footer from "./Footer";
 
 function GameCard({
-  id,
   title,
   short_description,
   platform,
@@ -16,19 +15,30 @@ function GameCard({
 }) {
   return (
     <div className="card-hover">
+      <div className="card-media">
+        <LazyLoad height={220} offset={100}>
+          <img loading="lazy" src={thumbnail} alt={title} />
+        </LazyLoad>
+      </div>
       <div className="card-hover__content">
         <h3 className="card-hover__title">{title}</h3>
         <p className="card-hover__text">{short_description}</p>
-        <p>{platform}</p>
-        <p>Genre: {genre}</p>
-        <p>Developers: {developer}</p>
-        <a href={game_url} style={{ color: "red" }} className="playNowBtn">
+        <p className="card-meta">
+          <span>Platform</span>
+          {platform}
+        </p>
+        <p className="card-meta">
+          <span>Genre</span>
+          {genre}
+        </p>
+        <p className="card-meta">
+          <span>Developer</span>
+          {developer}
+        </p>
+        <a href={game_url} className="playNowBtn">
           Play Now
         </a>
       </div>
-      <LazyLoad height={200} offset={100}>
-        <img loading="lazy" src={thumbnail} alt={title} />
-      </LazyLoad>
     </div>
   );
 }
